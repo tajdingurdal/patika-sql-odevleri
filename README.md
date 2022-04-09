@@ -1,6 +1,10 @@
 
-# Odev11
+# Odev12
 
-- (SELECT first_name FROM actor) UNION (SELECT first_name FROM customer);
-- (SELECT first_name FROM actor) INTERSECT (SELECT first_name FROM customer);
-- (SELECT first_name FROM actor) EXCEPT (SELECT first_name FROM customer);
+- SELECT COUNT(*) FROM film WHERE length > ( SELECT AVG(length) FROM film );
+- SELECT COUNT(*) FROM film WHERE rental_rate = (SELECT MAX(rental_rate ) FROM film);
+- SELECT * FROM film WHERE rental_rate = (SELECT MIN(rental_rate ) FROM film)  AND replacement_cost = (SELECT MIN(replacement_cost ) FROM film);
+- SELECT customer_id, SUM(amount) FROM payment GROUP BY customer_id ORDER BY SUM(amount) DESC;
+
+
+
